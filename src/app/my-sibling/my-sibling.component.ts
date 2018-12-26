@@ -9,18 +9,17 @@ import { MessageService } from '../message.service';
   styleUrls: ['./my-sibling.component.css']
 })
 export class MySiblingComponent implements OnInit, OnDestroy {
-  
-  mymessage:string;
+  mymessage: string;
   subscription: Subscription;
 
-  constructor(private messageService: MessageService) { 
+  constructor(private messageService: MessageService) {
     this.subscription = this.messageService.getMessage().subscribe(message => { this.mymessage = message; });
   }
 
   ngOnInit() {
     console.log("at sibling");
   }
-  
+
   updateParent() {
     this.messageService.updateMessage("Sending Message from Sibling");
   }

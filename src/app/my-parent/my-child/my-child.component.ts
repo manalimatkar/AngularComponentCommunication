@@ -7,15 +7,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class MyChildComponent implements OnInit {
 
-  @Input() message:string;
-  
+  @Input() message: string;
+
   @Output() childMessage = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
   }
-  
+
   updateParent() {
     this.childMessage.emit('Hello! My Parent !!!')
   }
