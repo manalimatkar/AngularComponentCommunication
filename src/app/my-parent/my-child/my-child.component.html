@@ -2,4 +2,9 @@
 <p>
   <strong>Message From Parent: </strong>{{ message }}
 </p>
-<button class="btn btn-primary mt-4" (click)="updateParent()">Update Parent Message</button>
+<button class="btn btn-primary mt-4" (click)="updateParent()">
+  Send Message To Parent
+</button>
+<hr>
+<p class="mt-5" *ngIf="messageFromSibling"><strong>Message From App Component: <br>
+</strong>{{ messageFromSibling }}</p>

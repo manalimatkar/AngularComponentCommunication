@@ -12,10 +12,11 @@ export class MyParentComponent implements OnInit, OnDestroy {
   messageFromSibling: string;
   messageFromChild: string;
 
-  subsctiption: Subscription;
+  subscription: Subscription;
 
   constructor(private messageService: MessageService) {
-    this.subsctiption = this.messageService.getMessage().subscribe(mymessage => this.messageFromSibling = mymessage)
+    this.subscription = this.messageService.getMessage()
+      .subscribe(mymessage => this.messageFromSibling = mymessage)
   }
 
   ngOnInit() {
@@ -26,7 +27,7 @@ export class MyParentComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subsctiption.unsubscribe();
+    this.subscription.unsubscribe();
   }
 
 }

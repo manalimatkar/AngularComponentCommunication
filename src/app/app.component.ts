@@ -10,7 +10,6 @@ export class AppComponent implements OnInit {
 
   constructor(private messageService: MessageService) {
   }
-
   ngOnInit() {
     console.log("At app component");
     this.messageService.updateMessage('Hello! From AppComponent !!');

@@ -1,6 +1,8 @@
 <div class="jumbotron">
   <h3>Sibling Component</h3>
-  <p class="lead">{{ mymessage }}</p>
+  <p class="mt-5" *ngIf="mymessage"><strong>Message From App Component: </strong><br>
+{{ mymessage }}</p>
+  
   <hr class="my-5">
-  <button class="btn btn-primary mt-4" (click)="updateParent()">Send Message</button>
+  <button class="btn btn-primary mt-4" (click)="updateParent()">Update App Message</button>
 </div>

@@ -3,17 +3,17 @@ import { Observable, Subject } from 'rxjs';
  
 @Injectable({ providedIn: 'root' })
 export class MessageService {
-    private subject = new Subject<string>();
+    private myMessage = new Subject<string>();
  
     updateMessage(message: string) {
-        this.subject.next(message);
+        this.myMessage.next(message);
     }
  
     clearMessage() {
-        this.subject.next();
+        this.myMessage.next();
     }
  
     getMessage(): Observable<string> {
-        return this.subject.asObservable();
+        return this.myMessage.asObservable();
     }
 }

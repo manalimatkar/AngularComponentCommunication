@@ -2,7 +2,9 @@
   <h3>Parent Component</h3>
   <p class="mt-4"><strong>Parent's Message To Child: </strong>{{ parentMessage }}</p>
   <p *ngIf="messageFromChild"><strong>Child's Message To Parent: </strong>{{ messageFromChild }}</p>
-  <p *ngIf="messageFromSibling"><strong>Message From Sibling: </strong>{{ messageFromSibling }}</p>
+  
+  <p class="mt-5" *ngIf="messageFromSibling"><strong>Message From App Component: <br>
+  </strong>{{ messageFromSibling }}</p>
 
   <hr class="my-5">
   <app-my-child [message]="parentMessage" (childMessage)="showMessageFromChild($event)"></app-my-child>

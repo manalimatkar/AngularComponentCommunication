@@ -13,7 +13,8 @@ export class MySiblingComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   constructor(private messageService: MessageService) {
-    this.subscription = this.messageService.getMessage().subscribe(message => { this.mymessage = message; });
+    this.subscription = this.messageService.getMessage()
+     .subscribe(mymessage => { this.mymessage = mymessage; });
   }
 
   ngOnInit() {
