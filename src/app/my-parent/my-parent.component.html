@@ -1,11 +1,15 @@
 <div class="jumbotron">
   <h3>Parent Component</h3>
   <p class="mt-4"><strong>Parent's Message To Child: </strong>{{ parentMessage }}</p>
+  <!-- Display value emitted from child component -->
   <p *ngIf="messageFromChild"><strong>Child's Message To Parent: </strong>{{ messageFromChild }}</p>
-  
-  <p class="mt-5" *ngIf="messageFromSibling"><strong>Message From App Component: <br>
-  </strong>{{ messageFromSibling }}</p>
-
+  <!-- Display value returned by Subject Observable "myMessage" -->
+  <p class="mt-5" *ngIf="messageFromSibling">
+    <strong>Message From App Component: </strong><br>
+    {{ messageFromSibling }}
+  </p>
   <hr class="my-5">
+  <!-- Bind parent property "parentMessage to child component message alias" -->
+  <!-- Handle childMessage event at showMessageFromChild() -->
   <app-my-child [message]="parentMessage" (childMessage)="showMessageFromChild($event)"></app-my-child>
 </div>

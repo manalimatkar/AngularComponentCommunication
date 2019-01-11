@@ -1,10 +1,12 @@
 <h5>Child Component</h5>
-<p>
+<div>
+  <!-- Display value passed from parent component via input property binding -->
   <strong>Message From Parent: </strong>{{ message }}
-</p>
+</div>
 <button class="btn btn-primary mt-4" (click)="updateParent()">
   Send Message To Parent
 </button>
 <hr>
+  <!-- Display value returned by Subject Observable "myMessage" -->
 <p class="mt-5" *ngIf="messageFromSibling"><strong>Message From App Component: <br>
 </strong>{{ messageFromSibling }}</p>

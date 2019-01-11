@@ -6,12 +6,17 @@ import { MessageService } from './message.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  // message:string = 'Hello! From AppComponent !!';
 
+  // Inject Message service at constructor
   constructor(private messageService: MessageService) {
   }
+
   ngOnInit() {
     console.log("At app component");
+    /* 
+      Update "myMessage" Subject next value,
+      Compoents subscribed to "myMessage" Subject will display this message
+    */    
     this.messageService.updateMessage('Hello! From AppComponent !!');
   }
 
